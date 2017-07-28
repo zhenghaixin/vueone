@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <div v-border="msg">我是一个蓝色边框的盒子</div>
+
+</div>
+
+</body>
+</html>
+<script src="vue.js"></script>
+<script>
+    Vue.directive('border', function (el,banding) {
+        console.log(el,banding);
+        el.style.border = '1px solid '+banding.value;
+
+    });
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            msg: 'blue'
+        }
+
+    });
+
+</script>

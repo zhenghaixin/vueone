@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="msg">
+    <h1>{{msg =='zhx'?2000:1000}}{{age=3}}</h1>
+    <!--绑定一次-->
+<h3 v-once="msg">{{msg}}</h3>
+    <div v-html="wed">{{wed}}</div>
+</div>
+
+</body>
+</html>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    var App = new Vue(
+        {
+            el:'#app',
+            data:{
+                msg:'zhx',
+    age:123,
+                wed:'<h1>hello</h1>'
+
+            }
+        }
+    )
+/*支持三元运算符，支持赋值*/
+</script>

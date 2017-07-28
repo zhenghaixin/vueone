@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+   <ul>
+       <li>{{msg}}</li>
+       <li>{{msg[0]}}</li>
+   </ul>
+    <button @click="getUser">获取数据</button>
+    <button @click = "postUser">发送数据</button>
+    <button @click = "getData">获取百度数据</button>
+
+</div>
+
+</body>
+</html>
+<script src="vue.js"></script>
+<script SRC="vue-resource.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            msg: ''
+
+        },
+        methods: {
+            postUser(){
+this.$http.post('/postUser',{name:'zhx'}).then(function (data) {
+    console.log(data);
+})
+            },
+            getData(){
+this.$http.jsonp('https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',{params:{wd:'c',},jsonp:'cb'}).then(function ( res) {
+    console.log(res)
+})
+            },
+            getUser (){
+    this.$http.get('/getUser').then(function (res) {
+        /*console.log(res.body)*/
+        this.msg = res.body;
+        console.log(this.msg[0].age)
+    })
+            }
+        }
+    })
+
+</script>

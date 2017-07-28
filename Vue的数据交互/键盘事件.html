@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <input type="text" @keydown = "fn">
+
+</div>
+
+</body>
+</html>
+<script src="vue.js"></script>
+<script type="text/ecmascript-6">
+    var vm = new Vue({
+        el:'#app',
+        methods:{
+          fn(){
+              alert('你按下键盘了')
+          }
+        }
+    })
+</script>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <div @click ="fn">parent
+        <div @click.stop ="fn.stop">Child</div>
+    </div>
+    <a href="https://www.baidu.com/" @click.prevent = 'fn1'>去百度</a>
+
+</div>
+
+
+</body>
+<script src="vue.js"></script>
+<script type="text/ecmascript-6">
+    var vm = new Vue({
+        el:'#app',
+        data:{
+
+        },
+        methods:{
+            fn1(e){
+             alert('稍后再去')
+            },
+            fn(e){
+                e.stopPropagation();
+                alert('ok');
+            }
+        },
+    });
+    /*可以再事件中使用修饰符stop,prevent阻止事件的默认行为*/
+
+</script>

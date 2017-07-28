@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="(val,index,ar) in arr">{{val}}&nbsp;&nbsp{{index}}{{ar}}</li>
+    </ul>
+
+</div>
+</body>
+</html>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+arr:['zheng','hai','xin']
+        }
+    });
+</script>

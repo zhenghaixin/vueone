@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <img :src="src"  :alt="title" :title="title">
+
+</div>
+<div>
+    <img src="huoying.jpg" alt="">
+</div>
+
+</body>
+</html>
+<script src="vue.js"></script>
+<script>
+    var vm=new Vue({
+        el:'#app',
+        methods:{
+
+        },
+        data:{
+            src:'http://pic.qiantucdn.com/58pic/17/86/49/559f8ec812795_1024.jpg',
+            title:'小程序',
+        }
+    });
+    /*如果要绑定动态数据需要使用bind v-bind的简写是我们的：*/
+
+</script>

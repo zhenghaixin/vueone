@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .back {
+            background-color: blue;
+        }
+
+        .color {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <!--根据boolean类型增加样式-->
+    <div :class="{color:flag, back:!flag}">zhenghaixin</div>
+    <!--根据数组方式增肌样式-->
+    <div :class="[back1,color1]" @click="fn">zhegn</div>
+</div>
+
+</body>
+<script src="vue.js"></script>
+<script type="text/ecmascript-6">
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            flag: false,
+            back1: 'back',
+            color1: 'color',
+        },
+        methods:{
+            fn(){
+console.dir(this)
+            }
+        }
+
+    });
+</script>
